@@ -7,7 +7,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <h2 class="mt-4"><i :class="icon" class="me-2"/>{{title}}</h2>
+  <h2 class="mt-3 mb-3">
+    <i :class="icon" class="me-2"/>{{title}}</h2>
 <!--  <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item">
       <NuxtLink to="/" class="nav-link">

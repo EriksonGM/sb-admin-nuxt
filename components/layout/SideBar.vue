@@ -13,23 +13,13 @@ interface MenuItem {
   items?: SubMenuItem[];
 }
 
-interface MenuGroup {
+const menus = ref<MenuItem[]>([
 
-  title: string;
-  items: MenuItem[];
-}
-
-const menus = ref<MenuGroup[]>([
+  {key: 'home', title: 'Inicio', icon: 'ri-home-3-line', url: '/'},
   {
-    title: 'Geral', items: [
-      {key: 'home', title: 'Inicio', icon: 'ri-home-3-line', url: '/'}
-    ]
-  },
-  {
-    title: 'Configurações', items: [
-      {key: 'security', title: 'Segurança', icon: 'ri-lock-password-line', items: [
-          {title : 'Utilizadores', url : '/users'}
-        ]}
+    key: 'security', title: 'Segurança', icon: 'ri-lock-password-line', items: [
+      {title: 'Utilizadores', url: '/users'},
+      {title: 'Roles', url: '/roles'},
     ]
   }
 ]);
@@ -40,9 +30,8 @@ const menus = ref<MenuGroup[]>([
     <nav id="sidenavAccordion" class="sb-sidenav accordion sb-sidenav-light">
       <div class="sb-sidenav-menu">
         <div class="nav">
-          <template v-for="g in menus">
-            <div class="sb-sidenav-menu-heading">{{ g.title }}</div>
-            <template v-if="g.items" v-for="m in g.items" >
+          <template v-for="m in menus">
+            <template v-if="m.items">
               <a :data-bs-target="`#${m.key}`" aria-controls="collapseLayouts" aria-expanded="false"
                  class="nav-link collapsed"
                  data-bs-toggle="collapse" href="#">
@@ -60,17 +49,13 @@ const menus = ref<MenuGroup[]>([
                 </nav>
               </div>
             </template>
-            <template v-else v-for="m in g.items">
-              <NuxtLink class="nav-link" :to="m.url">
+            <template v-else>
+              <NuxtLink :to="m.url" class="nav-link">
                 <div class="sb-nav-link-icon">
                   <i :class="m.icon"></i>
                 </div>
                 {{ m.title }} - Ola
               </NuxtLink>
-              <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Charts
-              </a>
             </template>
           </template>
           <div class="sb-sidenav-menu-heading">Core</div>

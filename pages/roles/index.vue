@@ -4,7 +4,7 @@ import PageHeader from "~/components/layout/PageHeader.vue";
 </script>
 
 <template>
-<PageHeader title="Utilizadores" icon="ri-group-line"/>
+  <PageHeader title="Roles" icon="ri-group-2-line"/>
 </template>
 
 <style scoped>
