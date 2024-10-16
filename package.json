@@ -10,13 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "nuxt": "^3.13.0",
-    "remixicon": "^4.3.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "bootstrap": "5.3.3",
+    "nuxt": "3.13.2",
+    "remixicon": "4.3.0",
+    "vue": "3.5.12",
+    "vue-router": "4.4.5"
   },
   "devDependencies": {
+    "@pinia/nuxt": "^0.5.5",
     "@types/bootstrap": "^5.2.10"
   }
 }

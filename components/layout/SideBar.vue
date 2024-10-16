@@ -17,12 +17,12 @@ const menus = ref<MenuItem[]>([
   {
     key: 'home', title: 'Inicio', icon: 'ri-home-3-line', url: '/'
   },
-  {
+ /* {
     key: 'security', title: 'Segurança', icon: 'ri-lock-password-line', items: [
       {title: 'Utilizadores', url: '/users'},
       {title: 'Roles', url: '/roles'}
     ]
-  },
+  },*/
   {
     key: 'security', title: 'Segurança', icon: 'ri-lock-password-line', items: [
       {title: 'Utilizadores', url: '/users'},
@@ -34,7 +34,7 @@ const menus = ref<MenuItem[]>([
 
 <template>
   <div id="layoutSidenav_nav">
-    <nav id="sidenavAccordion" class="sb-sidenav accordion sb-sidenav-light">
+    <nav id="sidenavAccordion" class="sb-sidenav accordion">
       <div class="sb-sidenav-menu">
         <div class="nav">
           <template v-for="m in menus">

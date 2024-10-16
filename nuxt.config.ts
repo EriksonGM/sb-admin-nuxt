@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     head : {
       bodyAttrs : {
         class : 'vh-100'
+      },
+      htmlAttrs : {
+        //'data-bs-theme':"dark"
       }
     }
   },
@@ -16,9 +19,12 @@ export default defineNuxtConfig({
     'assets/css/main.css',
     'remixicon/fonts/remixicon.css',
   ],
+
   plugins: [
     { src: '~/plugins/bootstrap.client', mode: 'client' },
   ],
+
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+  modules: ['@pinia/nuxt']
 })
